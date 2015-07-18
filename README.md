@@ -1,2 +1,2 @@
 # schapp
-# A WebApp For scheduling
+A WebApp For scheduling
