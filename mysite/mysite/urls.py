@@ -17,5 +17,14 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
+    # Whenever Django encounters include(),
+    # it chops off whatever part of the URL matched up to that point
+    # and sends the remaining string to the included URLconf for further processing.
+
+    # THe namespace is only for url reference, for different apps
+    # Saying that anything that polls.url refers to is under namespace polls
+    url(r'^polls/', include('polls.urls', namespace="polls")),
+    #note that in here there is no $ sign, because it will cut out
+    #whatever is after it and send to the include
     url(r'^admin/', include(admin.site.urls)),
 ]
